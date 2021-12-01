@@ -1,4 +1,6 @@
 package com.darkhold.workoutlog.controller;
+import com.darkhold.workoutlog.dto.PersonDTO;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -6,10 +8,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/person")
 public class PersonController {
 
-    @GetMapping("/creation")
-    public ResponseEntity<?> createPerson(){ //@RequestBody PersonDTO personDTO
+    @PostMapping("/creation")
+    public ResponseEntity<?> createPerson(@RequestBody PersonDTO personDTO){
 
-        return ResponseEntity.ok().body("Requisiçao processada com sucesso");
+        return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body("{\"example\":10}");
     }
 
 
